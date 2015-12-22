@@ -17,16 +17,14 @@ boolean bubbles
 boolean cancelable
 DOMEventTarget currentTarget
 boolean defaultPrevented
-number eventPhase
+Number eventPhase
 boolean isTrusted
 DOMEvent nativeEvent
 void preventDefault()
-boolean isDefaultPrevented()
 void stopPropagation()
-boolean isPropagationStopped()
 DOMEventTarget target
-number timeStamp
-string type
+Date timeStamp
+String type
 ```
 
 > 注意：
@@ -56,7 +54,7 @@ DOMDataTransfer clipboardData
 ```
 
 
-### 键盘事件
+### 键盘事件 
 
 事件名称：
 
@@ -68,17 +66,17 @@ onKeyDown onKeyPress onKeyUp
 
 ```javascript
 boolean altKey
-number charCode
+Number charCode
 boolean ctrlKey
-boolean getModifierState(key)
-string key
-number keyCode
-string locale
-number location
+function getModifierState(key)
+String key
+Number keyCode
+String locale
+Number location
 boolean metaKey
 boolean repeat
 boolean shiftKey
-number which
+Number which
 ```
 
 
@@ -122,28 +120,19 @@ onMouseMove onMouseOut onMouseOver onMouseUp
 
 ```javascript
 boolean altKey
-number button
-number buttons
-number clientX
-number clientY
+Number button
+Number buttons
+Number clientX
+Number clientY
 boolean ctrlKey
-boolean getModifierState(key)
+function getModifierState(key)
 boolean metaKey
-number pageX
-number pageY
+Number pageX
+Number pageY
 DOMEventTarget relatedTarget
-number screenX
-number screenY
+Number screenX
+Number screenY
 boolean shiftKey
-```
-
-
-### Selection Events
-
-事件名称:
-
-```
-onSelect
 ```
 
 
@@ -161,7 +150,7 @@ onTouchCancel onTouchEnd onTouchMove onTouchStart
 boolean altKey
 DOMTouchList changedTouches
 boolean ctrlKey
-boolean getModifierState(key)
+function getModifierState(key)
 boolean metaKey
 boolean shiftKey
 DOMTouchList targetTouches
@@ -180,7 +169,7 @@ onScroll
 属性：
 
 ```javascript
-number detail
+Number detail
 DOMAbstractView view
 ```
 
@@ -196,24 +185,8 @@ onWheel
 属性：
 
 ```javascript
-number deltaMode
-number deltaX
-number deltaY
-number deltaZ
-```
-
-### Media Events
-
-事件名称:
-
-```
-onAbort onCanPlay onCanPlayThrough onDurationChange onEmptied onEncrypted onEnded onError onLoadedData onLoadedMetadata onLoadStart onPause onPlay onPlaying onProgress onRateChange onSeeked onSeeking onStalled onSuspend onTimeUpdate onVolumeChange onWaiting
-```
-
-### Image Events
-
-事件名称:
-
-```
-onLoad onError
+Number deltaMode
+Number deltaX
+Number deltaY
+Number deltaZ
 ```

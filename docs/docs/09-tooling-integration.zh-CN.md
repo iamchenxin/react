@@ -48,7 +48,7 @@ var HelloMessage = React.createClass({
   }
 });
 
-ReactDOM.render(<HelloMessage name="John" />, mountNode);
+React.render(<HelloMessage name="John" />, mountNode);
 $ babel test.jsx
 "use strict";
 
@@ -65,7 +65,7 @@ var HelloMessage = React.createClass({
   }
 });
 
-ReactDOM.render(React.createElement(HelloMessage, { name: "John" }), mountNode);
+React.render(React.createElement(HelloMessage, { name: "John" }), mountNode);
 ```
 
 

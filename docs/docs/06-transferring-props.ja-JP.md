@@ -39,7 +39,7 @@ var FancyCheckbox = React.createClass({
     );
   }
 });
-ReactDOM.render(
+React.render(
   <FancyCheckbox checked={true} onClick={console.log.bind(console)}>
     Hello world!
   </FancyCheckbox>,
@@ -75,7 +75,7 @@ var FancyCheckbox = React.createClass({
     );
   }
 });
-ReactDOM.render(
+React.render(
   <FancyCheckbox checked={true} onClick={console.log.bind(console)}>
     Hello world!
   </FancyCheckbox>,

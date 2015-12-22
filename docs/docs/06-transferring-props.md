@@ -20,7 +20,7 @@ If you don't use JSX, you can use any object helper such as ES6 `Object.assign` 
 React.createElement(Component, Object.assign({}, this.props, { more: 'values' }));
 ```
 
-The rest of this tutorial explains best practices. It uses JSX and experimental ECMAScript syntax.
+The rest of this tutorial explains best practices. It uses JSX and experimental ES7 syntax.
 
 ## Manual Transfer
 
@@ -37,7 +37,7 @@ var FancyCheckbox = React.createClass({
     );
   }
 });
-ReactDOM.render(
+React.render(
   <FancyCheckbox checked={true} onClick={console.log.bind(console)}>
     Hello world!
   </FancyCheckbox>,
@@ -74,7 +74,7 @@ var FancyCheckbox = React.createClass({
     );
   }
 });
-ReactDOM.render(
+React.render(
   <FancyCheckbox checked={true} onClick={console.log.bind(console)}>
     Hello world!
   </FancyCheckbox>,
@@ -132,7 +132,7 @@ var FancyCheckbox = React.createClass({
 
 Rest properties allow you to extract the remaining properties from an object into a new object. It excludes every other property listed in the destructuring pattern.
 
-This is an experimental implementation of an [ECMAScript proposal](https://github.com/sebmarkbage/ecmascript-rest-spread).
+This is an experimental implementation of an [ES7 proposal](https://github.com/sebmarkbage/ecmascript-rest-spread).
 
 ```javascript
 var { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
@@ -143,7 +143,7 @@ z; // { a: 3, b: 4 }
 
 > Note:
 >
-> To transform rest and spread properties using Babel 6, you need to install the [`es2015`](https://babeljs.io/docs/plugins/preset-es2015/) preset, the [`transform-object-rest-spread`](https://babeljs.io/docs/plugins/transform-object-rest-spread/) plugin and configure them in the `.babelrc` file.
+> This proposal has reached stage 2 and is now enabled by default in Babel. Older versions of Babel may need to explicitly enable this transform with `babel --optional es7.objectRestSpread`
 
 ## Transferring with Underscore
 

@@ -105,7 +105,7 @@ var CheckLink = React.createClass({
   }
 });
 
-ReactDOM.render(
+React.render(
   <CheckLink href="/checked.html">
     Click here!
   </CheckLink>,
@@ -174,7 +174,7 @@ var TickTock = React.createClass({
   }
 });
 
-ReactDOM.render(
+React.render(
   <TickTock />,
   document.getElementById('example')
 );
@@ -192,7 +192,7 @@ class HelloMessage extends React.Component {
     return <div>Hello {this.props.name}</div>;
   }
 }
-ReactDOM.render(<HelloMessage name="Sebastian" />, mountNode);
+React.render(<HelloMessage name="Sebastian" />, mountNode);
 ```
 
 API近似于 `React.createClass` 除了 `getInitialState`。 你应该在构造函数里设置你的`state`，而不是提供一个单独的  `getInitialState` 方法。

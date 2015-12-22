@@ -21,9 +21,9 @@ number eventPhase
 boolean isTrusted
 DOMEvent nativeEvent
 void preventDefault()
-boolean isDefaultPrevented()
+void isDefaultPrevented()
 void stopPropagation()
-boolean isPropagationStopped()
+void isPropagationStopped()
 DOMEventTarget target
 number timeStamp
 string type
@@ -31,12 +31,12 @@ string type
 
 > Note:
 >
-> As of v0.14, returning `false` from an event handler will no longer stop event propagation. Instead, `e.stopPropagation()` or `e.preventDefault()` should be triggered manually, as appropriate.
+> As of v0.12, returning `false` from an event handler will no longer stop event propagation. Instead, `e.stopPropagation()` or `e.preventDefault()` should be triggered manually, as appropriate.
 
 ## Event pooling
 
-The `SyntheticEvent` is pooled. This means that the `SyntheticEvent` object will be reused and all properties will be nullified after the event callback has been invoked.
-This is for performance reasons.
+The `SyntheticEvent` is pooled. This means that the `SyntheticEvent` object will be reused and all properties will be nullified after the event callback has been invoked.  
+This is for performance reasons.  
 As such, you cannot access the event in an asynchronous way.
 
 ```javascript
@@ -82,22 +82,6 @@ DOMDataTransfer clipboardData
 ```
 
 
-### Composition Events
-
-Event names:
-
-```
-onCompositionEnd onCompositionStart onCompositionUpdate
-```
-
-Properties:
-
-```javascript
-string data
-
-```
-
-
 ### Keyboard Events
 
 Event names:
@@ -110,17 +94,17 @@ Properties:
 
 ```javascript
 boolean altKey
-number charCode
+Number charCode
 boolean ctrlKey
-boolean getModifierState(key)
-string key
-number keyCode
-string locale
-number location
+function getModifierState(key)
+String key
+Number keyCode
+String locale
+Number location
 boolean metaKey
 boolean repeat
 boolean shiftKey
-number which
+Number which
 ```
 
 
@@ -138,7 +122,6 @@ Properties:
 DOMEventTarget relatedTarget
 ```
 
-These focus events work on all elements in the React DOM, not just form elements.
 
 ### Form Events
 
@@ -161,38 +144,29 @@ onDragLeave onDragOver onDragStart onDrop onMouseDown onMouseEnter onMouseLeave
 onMouseMove onMouseOut onMouseOver onMouseUp
 ```
 
-The `onMouseEnter` and `onMouseLeave` events propagate from the element being left to the one being entered instead of ordinary bubbling and do not have a capture phase.
+The `onMouseEnter` and `onMouseLeave` events propagate from the component being left to the one being entered instead of ordinary bubbling and do not have a capture phase.
 
 Properties:
 
 ```javascript
 boolean altKey
-number button
-number buttons
-number clientX
-number clientY
+Number button
+Number buttons
+Number clientX
+Number clientY
 boolean ctrlKey
-boolean getModifierState(key)
+function getModifierState(key)
 boolean metaKey
-number pageX
-number pageY
+Number pageX
+Number pageY
 DOMEventTarget relatedTarget
-number screenX
-number screenY
+Number screenX
+Number screenY
 boolean shiftKey
 ```
 
 
-### Selection Events
-
-Event names:
-
-```
-onSelect
-```
-
-
-### Touch Events
+### Touch events
 
 Event names:
 
@@ -206,7 +180,7 @@ Properties:
 boolean altKey
 DOMTouchList changedTouches
 boolean ctrlKey
-boolean getModifierState(key)
+function getModifierState(key)
 boolean metaKey
 boolean shiftKey
 DOMTouchList targetTouches
@@ -225,7 +199,7 @@ onScroll
 Properties:
 
 ```javascript
-number detail
+Number detail
 DOMAbstractView view
 ```
 
@@ -241,10 +215,10 @@ onWheel
 Properties:
 
 ```javascript
-number deltaMode
-number deltaX
-number deltaY
-number deltaZ
+Number deltaMode
+Number deltaX
+Number deltaY
+Number deltaZ
 ```
 
 ### Media Events
